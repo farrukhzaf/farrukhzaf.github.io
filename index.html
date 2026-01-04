@@ -122,9 +122,11 @@
         <h2>About me</h2>
         <p>
           I am an M.Tech student in Electronic Systems Engineering at the Indian Institute of Science (IISc), Bangalore. 
-          My academic interests span digital and analog VLSI design, computer architecture, embedded systems, and 
-          hardware acceleration for machine learning. I am strongly motivated toward research-driven roles and 
-          PhD opportunities in hardware and systems design.
+          My research interests lie in digital and analog VLSI design, computer architecture, and FPGA-based systems, 
+          with a particular focus on timing-critical and secure hardware architectures. Currently, I am working on 
+          FPGA-based time-to-digital converters for quantum key distribution systems, where I explore high-resolution 
+          timing architectures, system-level design trade-offs, and hardware–software co-design. I am actively seeking 
+          PhD opportunities in hardware and systems research.
         </p>
       </section>
 
@@ -132,11 +134,11 @@
         <section>
           <h2>Research Interests</h2>
           <ul>
-            <li>Digital and Analog VLSI Design</li>
-            <li>Computer Architecture</li>
-            <li>Hardware Acceleration for Machine Learning</li>
-            <li>Embedded and FPGA-Based Systems</li>
-            <li>Secure and High-Speed Digital Systems</li>
+            <li>Digital VLSI and RTL microarchitecture design</li>
+            <li>Computer architecture and processor systems</li>
+            <li>FPGA-based prototyping and hardware accelerators</li>
+            <li>Timing-critical and secure digital systems</li>
+            <li>Hardware acceleration for machine learning workloads</li>
           </ul>
         </section>
 
@@ -160,10 +162,32 @@
       <section>
         <h2>Selected Projects</h2>
         <ul>
-          <li><strong>FPGA-Based Time-to-Digital Converter for Quantum Key Distribution</strong></li>
-          <li><strong>16-bit Multicycle CISC Processor on FPGA</strong></li>
-          <li><strong>FPGA–CPU Co-Processor for HDR Image Tone-Mapping</strong></li>
-          <li><strong>16-bit Pipelined Radix-4 Booth Multiplier (GPDK45nm)</strong></li>
+          <li>
+            <strong>FPGA-Based Time-to-Digital Converter for Quantum Key Distribution</strong><br />
+            Designing a high-resolution time-to-digital conversion system for quantum key distribution receivers. 
+            Implemented SPI-based interfacing and finite state machine control for the TI TDC7200 on FPGA, achieving 
+            timing resolution of approximately 55 ps. Ongoing work focuses on a fully FPGA-based tapped delay-line TDC 
+            architecture with coarse–fine time combination, targeting sub-100 ps resolution and future ASIC migration.
+          </li>
+          <li>
+            <strong>16-bit Multicycle CISC Processor on FPGA</strong><br />
+            Designed and implemented a 16-bit multicycle CISC processor with a custom instruction set supporting 
+            arithmetic, memory access, shift/rotate operations, and conditional branching. Implemented a unified 
+            memory architecture and validated functionality on the Basys-3 FPGA, achieving a maximum operating 
+            frequency of 138 MHz.
+          </li>
+          <li>
+            <strong>FPGA–CPU Co-Processor for HDR Image Tone-Mapping</strong><br />
+            Developed a hardware–software co-processing system for HDR image tone-mapping. Implemented Gaussian 
+            filtering on FPGA using line-buffer optimization and integrated UART-based communication with a CPU for 
+            post-processing, achieving high-quality tone-mapped outputs comparable to software implementations.
+          </li>
+          <li>
+            <strong>16-bit Pipelined Radix-4 Booth Multiplier</strong><br />
+            Designed a two-stage pipelined signed/unsigned radix-4 Booth multiplier using Wallace tree reduction and 
+            carry-skip adders in GPDK45nm technology. Achieved high throughput with optimized area and power, suitable 
+            for integration in high-performance arithmetic units.
+          </li>
         </ul>
       </section>
 
