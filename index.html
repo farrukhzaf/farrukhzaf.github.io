@@ -3,110 +3,252 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mohammad Farukh Zafar | Academic Portfolio</title>
+  <title>Mohammad Farukh Zafar | Hardware & Systems Research</title>
   <style>
-    body {
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    * {
       margin: 0;
-      color: #222;
-      background: #fff;
+      padding: 0;
+      box-sizing: border-box;
     }
-    a { color: #1b9e77; text-decoration: none; }
-    a:hover { text-decoration: underline; }
 
-    /* Layout */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #1a1a1a;
+      background: #fafafa;
+      line-height: 1.6;
+    }
+
+    a {
+      color: #059669;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    a:hover {
+      color: #047857;
+    }
+
+    /* Navigation */
+    nav {
+      background: #fff;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    nav .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      gap: 32px;
+      height: 60px;
+      align-items: center;
+    }
+
+    nav a {
+      font-size: 0.95em;
+      font-weight: 500;
+      position: relative;
+    }
+
+    nav a.active::after {
+      content: '';
+      position: absolute;
+      bottom: -18px;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: #059669;
+    }
+
+    /* Container */
     .container {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 40px 20px;
+      padding: 60px 20px;
       display: grid;
-      grid-template-columns: 280px 1fr;
-      gap: 60px;
+      grid-template-columns: 300px 1fr;
+      gap: 80px;
+      animation: fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     /* Sidebar */
     .sidebar {
       text-align: center;
-    }
-    .profile-pic {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 20px;
-    }
-    .name {
-      font-size: 1.6em;
-      font-weight: 500;
-      margin-bottom: 6px;
-    }
-    .role {
-      font-size: 1em;
-      color: #555;
-      margin-bottom: 16px;
-    }
-    .affiliation {
-      font-size: 0.95em;
-      line-height: 1.5;
-      color: #333;
-      margin-bottom: 18px;
-    }
-    .links a {
-      margin: 0 6px;
-      font-size: 0.95em;
+      position: sticky;
+      top: 100px;
+      align-self: start;
     }
 
-    /* Main content */
-    h2 {
-      font-size: 1.3em;
-      font-weight: 500;
-      margin-top: 0;
-      margin-bottom: 10px;
+    .profile-pic {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 24px;
+      border: 4px solid #fff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      background: linear-gradient(135deg, #059669, #047857);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 48px;
+      font-weight: 600;
     }
-    section {
-      margin-bottom: 36px;
+
+    .name {
+      font-size: 1.75em;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #1a1a1a;
     }
-    p {
+
+    .role {
+      font-size: 1.05em;
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    .affiliation {
+      font-size: 0.95em;
       line-height: 1.6;
-      margin-top: 0;
+      color: #555;
+      margin-bottom: 24px;
     }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .links a {
+      padding: 10px 20px;
+      border: 1px solid #e5e7eb;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+      background: #fff;
+    }
+
+    .links a:hover {
+      border-color: #059669;
+      background: #f0fdf4;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+    }
+
+    /* Main Content */
+    main {
+      background: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      font-size: 1.5em;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: #1a1a1a;
+      position: relative;
+      padding-bottom: 12px;
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, #059669, transparent);
+    }
+
+    section {
+      margin-bottom: 48px;
+    }
+
+    section:last-child {
+      margin-bottom: 0;
+    }
+
+    p {
+      line-height: 1.8;
+      margin-bottom: 16px;
+      color: #374151;
+    }
+
     ul {
-      padding-left: 18px;
-      margin: 6px 0 0 0;
+      padding-left: 20px;
+      margin-top: 12px;
     }
+
     li {
-      margin-bottom: 6px;
+      margin-bottom: 8px;
+      color: #374151;
     }
+
     .two-col {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 40px;
+      gap: 48px;
+      margin-top: 32px;
+    }
+
+    /* Highlight box */
+    .highlight-box {
+      background: linear-gradient(135deg, #f0fdf4, #ecfdf5);
+      border-left: 4px solid #059669;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 24px 0;
     }
 
     /* Responsive */
     @media (max-width: 900px) {
       .container {
         grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 40px 20px;
       }
+      
       .sidebar {
-        margin-bottom: 20px;
+        position: relative;
+        top: 0;
+      }
+
+      .two-col {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      main {
+        padding: 30px 24px;
       }
     }
   </style>
 </head>
 <body>
-  <nav style="max-width:1100px;margin:20px auto 0 auto;padding:0 20px;display:flex;gap:20px;font-size:0.95em;">
-    <a href="index.html">Home</a>
-    <a href="projects.html">Projects</a>
-    <a href="cv.html">CV</a>
-    <a href="contact.html">Contact</a>
+  <nav>
+    <div class="nav-container">
+      <a href="index.html" class="active">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="cv.html">CV</a>
+      <a href="contact.html">Contact</a>
+    </div>
   </nav>
 
   <div class="container">
-
     <!-- Sidebar -->
     <aside class="sidebar">
-      <img src="profile.jpg" alt="Profile photo" class="profile-pic" />
+      <div class="profile-pic">MFZ</div>
       <div class="name">Mohammad Farukh Zafar</div>
       <div class="role">M.Tech Student</div>
       <div class="affiliation">
@@ -114,25 +256,25 @@
         Indian Institute of Science, Bangalore
       </div>
       <div class="links">
-        <a href="mailto:farukhzafar@iisc.ac.in">Email</a> ·
-        <a href="https://github.com/farrukhzaf" target="_blank">GitHub</a> ·
-        <a href="https://www.linkedin.com/in/farukhzafar" target="_blank">LinkedIn</a> ·
-        <a href="CV.pdf" target="_blank">CV</a>
+        <a href="mailto:farukhzafar@iisc.ac.in">📧 Email</a>
+        <a href="https://github.com/farrukhzaf" target="_blank">💻 GitHub</a>
+        <a href="https://www.linkedin.com/in/farukhzafar" target="_blank">🔗 LinkedIn</a>
+        <a href="CV.pdf" target="_blank">📄 Download CV</a>
       </div>
     </aside>
 
     <!-- Main -->
     <main>
-
       <section>
-        <h2>About me</h2>
+        <h2>About Me</h2>
         <p>
           I am an M.Tech student in Electronic Systems Engineering at the Indian Institute of Science (IISc), Bangalore. 
           My research interests lie in digital and analog VLSI design, computer architecture, and FPGA-based systems, 
-          with a particular focus on timing-critical and secure hardware architectures. Currently, I am working on 
-          FPGA-based time-to-digital converters for quantum key distribution systems, where I explore high-resolution 
-          timing architectures, system-level design trade-offs, and hardware–software co-design. I am actively seeking 
-          PhD opportunities in hardware and systems research.
+          with a particular focus on timing-critical and secure hardware architectures.
+        </p>
+        <p>
+          Currently, I am working on FPGA-based time-to-digital converters for quantum key distribution systems, where 
+          I explore high-resolution timing architectures, system-level design trade-offs, and hardware–software co-design.
         </p>
       </section>
 
@@ -144,7 +286,7 @@
             <li>Computer architecture and processor systems</li>
             <li>FPGA-based prototyping and hardware accelerators</li>
             <li>Timing-critical and secure digital systems</li>
-            <li>Hardware acceleration for machine learning workloads</li>
+            <li>Hardware acceleration for machine learning</li>
           </ul>
         </section>
 
@@ -153,21 +295,18 @@
           <ul>
             <li>
               <strong>M.Tech, Electronic Systems Engineering</strong><br />
-              Indian Institute of Science, Bangalore (2024–2026)<br />
-              CGPA: 8.6
+              Indian Institute of Science, Bangalore<br>
+              2024–2026
             </li>
             <li>
-              <strong>B.Tech, Electronics and Communication Engineering</strong><br />
-              Jamia Millia Islamia, New Delhi (2020–2024)<br />
-              CGPA: 9.8
+              <strong>B.Tech, Electronics and Communication</strong><br />
+              Jamia Millia Islamia, New Delhi<br>
+              2020–2024
             </li>
           </ul>
         </section>
       </div>
-
     </main>
   </div>
-
 </body>
 </html>
-
