@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV | Mohammad Farukh Zafar</title>
+  <style>
+    body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      margin: 0;
+      color: #222;
+      background: #fff;
+    }
+    a { color: #1b9e77; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    nav {
+      max-width: 1100px;
+      margin: 20px auto 0 auto;
+      padding: 0 20px;
+      display: flex;
+      gap: 20px;
+      font-size: 0.95em;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 60px;
+    }
+
+    .sidebar {
+      text-align: center;
+    }
+    .profile-pic {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
+    .name {
+      font-size: 1.6em;
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+    .role {
+      font-size: 1em;
+      color: #555;
+      margin-bottom: 16px;
+    }
+    .affiliation {
+      font-size: 0.95em;
+      line-height: 1.5;
+      color: #333;
+      margin-bottom: 18px;
+    }
+    .links a {
+      margin: 0 6px;
+      font-size: 0.95em;
+    }
+
+    h2 {
+      font-size: 1.3em;
+      font-weight: 500;
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+    section {
+      margin-bottom: 32px;
+    }
+    ul {
+      padding-left: 18px;
+      margin: 6px 0 0 0;
+    }
+    li { margin-bottom: 8px; }
+
+    .download {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 8px 14px;
+      border: 1px solid #1b9e77;
+      border-radius: 4px;
+      font-size: 0.9em;
+    }
+
+    @media (max-width: 900px) {
+      .container { grid-template-columns: 1fr; }
+      .sidebar { margin-bottom: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="cv.html">CV</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <div class="container">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <img src="profile.jpg" alt="Profile photo" class="profile-pic" />
+      <div class="name">Mohammad Farukh Zafar</div>
+      <div class="role">M.Tech Student</div>
+      <div class="affiliation">
+        Electronic Systems Engineering<br />
+        Indian Institute of Science, Bangalore
+      </div>
+      <div class="links">
+        <a href="mailto:farukhzafar@iisc.ac.in">Email</a> ·
+        <a href="https://github.com/farrukhzaf" target="_blank">GitHub</a> ·
+        <a href="CV.pdf" target="_blank">CV (PDF)</a>
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <main>
+
+      <section>
+        <h2>Curriculum Vitae</h2>
+        <p>
+          A detailed version of my curriculum vitae, including coursework, projects, and technical skills, is
+          available as a PDF.
+        </p>
+        <a class="download" href="CV.pdf" target="_blank">Download CV (PDF)</a>
+      </section>
+
+      <section>
+        <h2>Education</h2>
+        <ul>
+          <li>
+            <strong>M.Tech, Electronic Systems Engineering</strong><br />
+            Indian Institute of Science, Bangalore (2024–2026) — CGPA: 8.6
+          </li>
+          <li>
+            <strong>B.Tech, Electronics and Communication Engineering</strong><br />
+            Jamia Millia Islamia, New Delhi (2020–2024) — CGPA: 9.8
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Research Interests</h2>
+        <ul>
+          <li>Digital VLSI and RTL microarchitecture design</li>
+          <li>Computer architecture and processor systems</li>
+          <li>FPGA-based prototyping and hardware accelerators</li>
+          <li>Timing-critical and secure digital systems</li>
+          <li>Hardware acceleration for machine learning</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Technical Skills</h2>
+        <ul>
+          <li><strong>HDL:</strong> Verilog</li>
+          <li><strong>Programming:</strong> C, Python, MATLAB</li>
+          <li><strong>Tools:</strong> Xilinx Vivado, Cadence Virtuoso, Code Composer Studio, Keil</li>
+          <li><strong>Platforms:</strong> Basys-3 (Artix-7), TM4C123G, Arduino, ATtiny85, Raspberry Pi</li>
+        </ul>
+      </section>
+
+    </main>
+  </div>
+
+</body>
+</html>
