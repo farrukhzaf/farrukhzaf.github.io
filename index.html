@@ -95,6 +95,12 @@
   </style>
 </head>
 <body>
+  <nav style="max-width:1100px;margin:20px auto 0 auto;padding:0 20px;display:flex;gap:20px;font-size:0.95em;">
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="cv.html">CV</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 
   <div class="container">
 
@@ -159,49 +165,9 @@
         </section>
       </div>
 
-      <section>
-        <h2>Selected Projects</h2>
-        <ul>
-          <li>
-            <strong>FPGA-Based Time-to-Digital Converter for Quantum Key Distribution</strong><br />
-            Designing a high-resolution time-to-digital conversion system for quantum key distribution receivers. 
-            Implemented SPI-based interfacing and finite state machine control for the TI TDC7200 on FPGA, achieving 
-            timing resolution of approximately 55 ps. Ongoing work focuses on a fully FPGA-based tapped delay-line TDC 
-            architecture with coarse–fine time combination, targeting sub-100 ps resolution and future ASIC migration.
-          </li>
-          <li>
-            <strong>16-bit Multicycle CISC Processor on FPGA</strong><br />
-            Designed and implemented a 16-bit multicycle CISC processor with a custom instruction set supporting 
-            arithmetic, memory access, shift/rotate operations, and conditional branching. Implemented a unified 
-            memory architecture and validated functionality on the Basys-3 FPGA, achieving a maximum operating 
-            frequency of 138 MHz.
-          </li>
-          <li>
-            <strong>FPGA–CPU Co-Processor for HDR Image Tone-Mapping</strong><br />
-            Developed a hardware–software co-processing system for HDR image tone-mapping. Implemented Gaussian 
-            filtering on FPGA using line-buffer optimization and integrated UART-based communication with a CPU for 
-            post-processing, achieving high-quality tone-mapped outputs comparable to software implementations.
-          </li>
-          <li>
-            <strong>16-bit Pipelined Radix-4 Booth Multiplier</strong><br />
-            Designed a two-stage pipelined signed/unsigned radix-4 Booth multiplier using Wallace tree reduction and 
-            carry-skip adders in GPDK45nm technology. Achieved high throughput with optimized area and power, suitable 
-            for integration in high-performance arithmetic units.
-          </li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>Skills</h2>
-        <ul>
-          <li><strong>HDL:</strong> Verilog</li>
-          <li><strong>Programming:</strong> C, Python, MATLAB</li>
-          <li><strong>Tools:</strong> Xilinx Vivado, Cadence Virtuoso, Code Composer Studio, Keil</li>
-        </ul>
-      </section>
-
     </main>
   </div>
 
 </body>
 </html>
+
