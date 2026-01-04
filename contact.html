@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Mohammad Farukh Zafar</title>
+  <style>
+    body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      margin: 0;
+      color: #222;
+      background: #fff;
+    }
+    a { color: #1b9e77; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    nav {
+      max-width: 1100px;
+      margin: 20px auto 0 auto;
+      padding: 0 20px;
+      display: flex;
+      gap: 20px;
+      font-size: 0.95em;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 60px;
+    }
+
+    .sidebar {
+      text-align: center;
+    }
+    .profile-pic {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
+    .name {
+      font-size: 1.6em;
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+    .role {
+      font-size: 1em;
+      color: #555;
+      margin-bottom: 16px;
+    }
+    .affiliation {
+      font-size: 0.95em;
+      line-height: 1.5;
+      color: #333;
+      margin-bottom: 18px;
+    }
+    .links a {
+      margin: 0 6px;
+      font-size: 0.95em;
+    }
+
+    h2 {
+      font-size: 1.3em;
+      font-weight: 500;
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+    section {
+      margin-bottom: 32px;
+    }
+    ul {
+      padding-left: 18px;
+      margin: 6px 0 0 0;
+    }
+    li { margin-bottom: 8px; }
+
+    @media (max-width: 900px) {
+      .container { grid-template-columns: 1fr; }
+      .sidebar { margin-bottom: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="cv.html">CV</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <div class="container">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <img src="profile.jpg" alt="Profile photo" class="profile-pic" />
+      <div class="name">Mohammad Farukh Zafar</div>
+      <div class="role">M.Tech Student</div>
+      <div class="affiliation">
+        Electronic Systems Engineering<br />
+        Indian Institute of Science, Bangalore
+      </div>
+      <div class="links">
+        <a href="mailto:farukhzafar@iisc.ac.in">Email</a> ·
+        <a href="https://github.com/farrukhzaf" target="_blank">GitHub</a> ·
+        <a href="https://www.linkedin.com/in/farukhzafar" target="_blank">LinkedIn</a>
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <main>
+
+      <section>
+        <h2>Contact</h2>
+        <p>
+          I am open to academic discussions, research collaborations, and PhD opportunities in hardware and 
+          systems research. The best way to reach me is via email.
+        </p>
+        <ul>
+          <li><strong>Email:</strong> <a href="mailto:farukhzafar@iisc.ac.in">farukhzafar@iisc.ac.in</a></li>
+          <li><strong>GitHub:</strong> <a href="https://github.com/farrukhzaf" target="_blank">github.com/farrukhzaf</a></li>
+          <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/farukhzafar" target="_blank">linkedin.com/in/farukhzafar</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Affiliation</h2>
+        <p>
+          Department of Electronic Systems Engineering<br />
+          Indian Institute of Science, Bangalore<br />
+          Bangalore, India
+        </p>
+      </section>
+
+    </main>
+  </div>
+
+</body>
+</html>
