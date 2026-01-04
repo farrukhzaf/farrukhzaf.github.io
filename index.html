@@ -6,162 +6,177 @@
   <title>Mohammad Farukh Zafar | Academic Portfolio</title>
   <style>
     body {
-      font-family: Georgia, 'Times New Roman', serif;
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-      color: #111;
-      line-height: 1.6;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      margin: 0;
+      color: #222;
+      background: #fff;
     }
-    h1, h2, h3 {
-      font-weight: normal;
+    a { color: #1b9e77; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Layout */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 60px;
     }
-    h1 {
-      font-size: 2.2em;
-      margin-bottom: 0;
+
+    /* Sidebar */
+    .sidebar {
+      text-align: center;
     }
-    .subtitle {
-      margin-top: 4px;
-      font-size: 1.1em;
+    .profile-pic {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
+    .name {
+      font-size: 1.6em;
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+    .role {
+      font-size: 1em;
+      color: #555;
+      margin-bottom: 16px;
+    }
+    .affiliation {
+      font-size: 0.95em;
+      line-height: 1.5;
       color: #333;
+      margin-bottom: 18px;
     }
-    hr {
-      margin: 30px 0;
+    .links a {
+      margin: 0 6px;
+      font-size: 0.95em;
     }
-    a {
-      color: #0645ad;
-      text-decoration: none;
+
+    /* Main content */
+    h2 {
+      font-size: 1.3em;
+      font-weight: 500;
+      margin-top: 0;
+      margin-bottom: 10px;
     }
-    a:hover {
-      text-decoration: underline;
+    section {
+      margin-bottom: 36px;
+    }
+    p {
+      line-height: 1.6;
+      margin-top: 0;
     }
     ul {
-      padding-left: 20px;
+      padding-left: 18px;
+      margin: 6px 0 0 0;
     }
-    .section {
-      margin-bottom: 30px;
+    li {
+      margin-bottom: 6px;
     }
-    .small {
-      font-size: 0.95em;
-      color: #444;
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+      .sidebar {
+        margin-bottom: 20px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <h1>Mohammad Farukh Zafar</h1>
-  <div class="subtitle">
-    M.Tech Electronic Systems Engineering, IISc Bangalore<br />
-    Email: <a href="mailto:farukhzafar@iisc.ac.in">farukhzafar@iisc.ac.in</a> · 
-    <a href="https://github.com/farrukhzaf" target="_blank">GitHub</a> · 
-    <a href="https://www.linkedin.com/in/farukhzafar" target="_blank">LinkedIn</a>
-  </div>
+  <div class="container">
 
-  <hr />
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <img src="profile.jpg" alt="Profile photo" class="profile-pic" />
+      <div class="name">Mohammad Farukh Zafar</div>
+      <div class="role">M.Tech Student</div>
+      <div class="affiliation">
+        Electronic Systems Engineering<br />
+        Indian Institute of Science, Bangalore
+      </div>
+      <div class="links">
+        <a href="mailto:farukhzafar@iisc.ac.in">Email</a> ·
+        <a href="https://github.com/farrukhzaf" target="_blank">GitHub</a> ·
+        <a href="https://www.linkedin.com/in/farukhzafar" target="_blank">LinkedIn</a> ·
+        <a href="CV.pdf" target="_blank">CV</a>
+      </div>
+    </aside>
 
-  <div class="section">
-    <h2>About</h2>
-    <p>
-      I am an M.Tech student in Electronic Systems Engineering at the Indian Institute of Science (IISc), Bangalore. 
-      My academic interests lie in digital and analog VLSI design, computer architecture, embedded systems, and 
-      hardware acceleration for machine learning. I am particularly interested in research-oriented roles and 
-      PhD opportunities at the intersection of hardware design and emerging computing systems.
-    </p>
-  </div>
+    <!-- Main -->
+    <main>
 
-  <div class="section">
-    <h2>Research Interests</h2>
-    <ul>
-      <li>Digital and Analog VLSI Design</li>
-      <li>Computer Architecture and Processor Design</li>
-      <li>Hardware Acceleration for Machine Learning</li>
-      <li>Embedded and FPGA-Based Systems</li>
-      <li>Secure and High-Speed Digital Systems</li>
-    </ul>
-  </div>
+      <section>
+        <h2>About me</h2>
+        <p>
+          I am an M.Tech student in Electronic Systems Engineering at the Indian Institute of Science (IISc), Bangalore. 
+          My academic interests span digital and analog VLSI design, computer architecture, embedded systems, and 
+          hardware acceleration for machine learning. I am strongly motivated toward research-driven roles and 
+          PhD opportunities in hardware and systems design.
+        </p>
+      </section>
 
-  <div class="section">
-    <h2>Education</h2>
-    <ul>
-      <li>
-        <strong>Indian Institute of Science, Bangalore</strong><br />
-        M.Tech in Electronic Systems Engineering (2024–2026)<br />
-        GPA: 8.6
-      </li>
-      <li>
-        <strong>Jamia Millia Islamia, New Delhi</strong><br />
-        B.Tech in Electronics and Communication Engineering (2020–2024)<br />
-        GPA: 9.8
-      </li>
-    </ul>
-  </div>
+      <div class="two-col">
+        <section>
+          <h2>Research Interests</h2>
+          <ul>
+            <li>Digital and Analog VLSI Design</li>
+            <li>Computer Architecture</li>
+            <li>Hardware Acceleration for Machine Learning</li>
+            <li>Embedded and FPGA-Based Systems</li>
+            <li>Secure and High-Speed Digital Systems</li>
+          </ul>
+        </section>
 
-  <div class="section">
-    <h2>Selected Projects</h2>
-    <ul>
-      <li>
-        <strong>Quantum Key Distribution (QKD) Receiver System</strong><br />
-        Designing a secure optical receiver system based on the Coherent One-Way (COW) protocol. 
-        Implemented SPI communication and FPGA-based finite state machine control for the TI TDC7200, 
-        achieving high-resolution time-of-flight measurements (~55 ps).<br />
-        <span class="small">Technologies: Verilog, FPGA, SPI</span>
-      </li>
-      <li>
-        <strong>16-bit Multicycle CISC Processor</strong><br />
-        Designed and implemented a 16-bit multicycle CISC processor on the Basys-3 FPGA with a custom 
-        instruction set and unified memory architecture. Achieved 138 MHz maximum operating frequency.<br />
-        <span class="small">Technologies: Verilog, Processor Design, FPGA</span>
-      </li>
-      <li>
-        <strong>FPGA-Based HDR Image Tone-Mapping System</strong><br />
-        Implemented Gaussian filtering for HDR tone-mapping using an FPGA-based hardware accelerator 
-        with line-buffer optimization and UART-based host communication.<br />
-        <span class="small">Technologies: Verilog, FPGA, Image Processing</span>
-      </li>
-      <li>
-        <strong>Embedded Vending Machine System</strong><br />
-        Developed a vending machine prototype using the TM4C123G microcontroller with LCD interface, 
-        PWM motor control, and IR-based sensing, achieving high dispensing reliability.<br />
-        <span class="small">Technologies: Embedded Systems, TM4C123G, I2C</span>
-      </li>
-    </ul>
-  </div>
+        <section>
+          <h2>Education</h2>
+          <ul>
+            <li>
+              <strong>M.Tech, Electronic Systems Engineering</strong><br />
+              Indian Institute of Science, Bangalore (2024–2026)<br />
+              CGPA: 8.6
+            </li>
+            <li>
+              <strong>B.Tech, Electronics and Communication Engineering</strong><br />
+              Jamia Millia Islamia, New Delhi (2020–2024)<br />
+              CGPA: 9.8
+            </li>
+          </ul>
+        </section>
+      </div>
 
-  <div class="section">
-    <h2>Skills</h2>
-    <ul>
-      <li><strong>Hardware Description Languages:</strong> Verilog</li>
-      <li><strong>Programming Languages:</strong> C, Python, MATLAB</li>
-      <li><strong>Tools:</strong> Xilinx Vivado, Cadence Virtuoso, Code Composer Studio, Keil uVision, Altium, KiCad</li>
-      <li><strong>Platforms:</strong> Basys 3 (Artix-7), TM4C123G, Arduino Uno, ATtiny85, Raspberry Pi 4</li>
-    </ul>
-  </div>
+      <section>
+        <h2>Selected Projects</h2>
+        <ul>
+          <li><strong>FPGA-Based Time-to-Digital Converter for Quantum Key Distribution</strong></li>
+          <li><strong>16-bit Multicycle CISC Processor on FPGA</strong></li>
+          <li><strong>FPGA–CPU Co-Processor for HDR Image Tone-Mapping</strong></li>
+          <li><strong>16-bit Pipelined Radix-4 Booth Multiplier (GPDK45nm)</strong></li>
+        </ul>
+      </section>
 
-  <div class="section">
-    <h2>Coursework (Selected)</h2>
-    <ul>
-      <li>Digital VLSI Design</li>
-      <li>Digital System Design with FPGAs</li>
-      <li>Processor System Design</li>
-      <li>Embedded System Design</li>
-      <li>Fundamentals of MOS Analog Integrated Circuits</li>
-      <li>Neuromorphic Analog VLSI Design</li>
-    </ul>
-  </div>
+      <section>
+        <h2>Skills</h2>
+        <ul>
+          <li><strong>HDL:</strong> Verilog</li>
+          <li><strong>Programming:</strong> C, Python, MATLAB</li>
+          <li><strong>Tools:</strong> Xilinx Vivado, Cadence Virtuoso, Code Composer Studio, Keil</li>
+        </ul>
+      </section>
 
-  <div class="section">
-    <h2>Achievements</h2>
-    <ul>
-      <li>GATE Qualified with AIR 196</li>
-      <li>Branch Rank 1 in B.Tech (Electronics and Communication Engineering)</li>
-    </ul>
-  </div>
-
-  <div class="section">
-    <h2>Curriculum Vitae</h2>
-    <p>
-      <a href="CV.pdf" target="_blank">Download CV (PDF)</a>
-    </p>
+    </main>
   </div>
 
 </body>
