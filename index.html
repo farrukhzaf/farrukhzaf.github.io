@@ -1,312 +1,318 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mohammad Farukh Zafar | Hardware & Systems Research</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      color: #1a1a1a;
-      background: #fafafa;
-      line-height: 1.6;
-    }
-
-    a {
-      color: #059669;
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-    a:hover {
-      color: #047857;
-    }
-
-    /* Navigation */
-    nav {
-      background: #fff;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    
-    nav .nav-container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 20px;
-      display: flex;
-      gap: 32px;
-      height: 60px;
-      align-items: center;
-    }
-
-    nav a {
-      font-size: 0.95em;
-      font-weight: 500;
-      position: relative;
-    }
-
-    nav a.active::after {
-      content: '';
-      position: absolute;
-      bottom: -18px;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: #059669;
-    }
-
-    /* Container */
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 60px 20px;
-      display: grid;
-      grid-template-columns: 300px 1fr;
-      gap: 80px;
-      animation: fadeIn 0.5s ease;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* Sidebar */
-    .sidebar {
-      text-align: center;
-      position: sticky;
-      top: 100px;
-      align-self: start;
-    }
-
-    .profile-pic {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 24px;
-      border: 4px solid #fff;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      background: linear-gradient(135deg, #059669, #047857);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 48px;
-      font-weight: 600;
-    }
-
-    .name {
-      font-size: 1.75em;
-      font-weight: 600;
-      margin-bottom: 8px;
-      color: #1a1a1a;
-    }
-
-    .role {
-      font-size: 1.05em;
-      color: #666;
-      margin-bottom: 20px;
-    }
-
-    .affiliation {
-      font-size: 0.95em;
-      line-height: 1.6;
-      color: #555;
-      margin-bottom: 24px;
-    }
-
-    .links {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .links a {
-      padding: 10px 20px;
-      border: 1px solid #e5e7eb;
-      border-radius: 6px;
-      transition: all 0.2s ease;
-      background: #fff;
-    }
-
-    .links a:hover {
-      border-color: #059669;
-      background: #f0fdf4;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.08);
-    }
-
-    /* Main Content */
-    main {
-      background: #fff;
-      padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    }
-
-    h2 {
-      font-size: 1.5em;
-      font-weight: 600;
-      margin-bottom: 20px;
-      color: #1a1a1a;
-      position: relative;
-      padding-bottom: 12px;
-    }
-
-    h2::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 60px;
-      height: 3px;
-      background: linear-gradient(90deg, #059669, transparent);
-    }
-
-    section {
-      margin-bottom: 48px;
-    }
-
-    section:last-child {
-      margin-bottom: 0;
-    }
-
-    p {
-      line-height: 1.8;
-      margin-bottom: 16px;
-      color: #374151;
-    }
-
-    ul {
-      padding-left: 20px;
-      margin-top: 12px;
-    }
-
-    li {
-      margin-bottom: 8px;
-      color: #374151;
-    }
-
-    .two-col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
-      margin-top: 32px;
-    }
-
-    /* Highlight box */
-    .highlight-box {
-      background: linear-gradient(135deg, #f0fdf4, #ecfdf5);
-      border-left: 4px solid #059669;
-      padding: 20px;
-      border-radius: 8px;
-      margin: 24px 0;
-    }
-
-    /* Responsive */
-    @media (max-width: 900px) {
-      .container {
-        grid-template-columns: 1fr;
-        gap: 40px;
-        padding: 40px 20px;
-      }
-      
-      .sidebar {
-        position: relative;
-        top: 0;
-      }
-
-      .two-col {
-        grid-template-columns: 1fr;
-        gap: 32px;
-      }
-
-      main {
-        padding: 30px 24px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohammad Farukh Zafar | Digital Design Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <nav>
-    <div class="nav-container">
-      <a href="index.html" class="active">Home</a>
-      <a href="projects.html">Projects</a>
-      <a href="cv.html">CV</a>
-      <a href="contact.html">Contact</a>
-    </div>
-  </nav>
+    <div class="circuit-bg"></div>
 
-  <div class="container">
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <div class="profile-pic">MFZ</div>
-      <div class="name">Mohammad Farukh Zafar</div>
-      <div class="role">M.Tech Student</div>
-      <div class="affiliation">
-        Electronic Systems Engineering<br />
-        Indian Institute of Science, Bangalore
-      </div>
-      <div class="links">
-        <a href="mailto:farukhzafar@iisc.ac.in">📧 Email</a>
-        <a href="https://github.com/farrukhzaf" target="_blank">💻 GitHub</a>
-        <a href="https://www.linkedin.com/in/farukhzafar" target="_blank">🔗 LinkedIn</a>
-        <a href="CV.pdf" target="_blank">📄 Download CV</a>
-      </div>
-    </aside>
+    <nav>
+        <a href="#" class="logo">farukh<span>.dev</span></a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-    <!-- Main -->
-    <main>
-      <section>
-        <h2>About Me</h2>
-        <p>
-          I am an M.Tech student in Electronic Systems Engineering at the Indian Institute of Science (IISc), Bangalore. 
-          My research interests lie in digital and analog VLSI design, computer architecture, and FPGA-based systems, 
-          with a particular focus on timing-critical and secure hardware architectures.
-        </p>
-        <p>
-          Currently, I am working on FPGA-based time-to-digital converters for quantum key distribution systems, where 
-          I explore high-resolution timing architectures, system-level design trade-offs, and hardware–software co-design.
-        </p>
-      </section>
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-label">Digital Design Engineer</div>
+            <h1>Mohammad Farukh <span class="highlight">Zafar</span></h1>
+            <p class="hero-description">
+                M.Tech student at IISc Bangalore specializing in Computer Architecture, Digital Design, and VLSI. 
+                Passionate about designing efficient hardware systems from processors to quantum communication receivers.
+            </p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">View Projects</a>
+                <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="signal-wave">
+                <svg viewBox="0 0 400 400">
+                    <path class="wave-path" d="M50,200 Q100,100 150,200 T250,200 T350,200" />
+                    <path class="wave-path wave-path-2" d="M50,180 Q100,80 150,180 T250,180 T350,180" />
+                    <path class="wave-path wave-path-3" d="M50,220 Q100,120 150,220 T250,220 T350,220" />
+                </svg>
+            </div>
+        </div>
+    </section>
 
-      <div class="two-col">
-        <section>
-          <h2>Research Interests</h2>
-          <ul>
-            <li>Digital VLSI and RTL microarchitecture design</li>
-            <li>Computer architecture and processor systems</li>
-            <li>FPGA-based prototyping and hardware accelerators</li>
-            <li>Timing-critical and secure digital systems</li>
-            <li>Hardware acceleration for machine learning</li>
-          </ul>
-        </section>
+    <section id="about">
+        <div class="section-header">
+            <div class="section-label">01 // About</div>
+            <h2 class="section-title">Designing the Future of Hardware</h2>
+        </div>
+        <div class="about-content">
+            <div class="about-text">
+                <p>I'm a graduate student at the Indian Institute of Science, Bangalore, pursuing my M.Tech in Electronics Systems Engineering. My passion lies at the intersection of computer architecture, digital design, and VLSI — where elegant algorithms meet physical reality.</p>
+                <p>From implementing pipelined RISC-V processors to designing quantum key distribution receiver systems, I thrive on challenges that push the boundaries of what's possible in hardware.</p>
+                <p>Currently, I'm working on a Quantum Key Distribution (QKD) Receiver System using the Coherent One-Way protocol, achieving 55ps timing resolution for secure optical communication.</p>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card"><div class="stat-value">196</div><div class="stat-label">GATE All India Rank</div></div>
+                <div class="stat-card"><div class="stat-value">#1</div><div class="stat-label">Branch Rank (B.Tech)</div></div>
+                <div class="stat-card"><div class="stat-value">9.8</div><div class="stat-label">B.Tech GPA</div></div>
+                <div class="stat-card"><div class="stat-value">8.6</div><div class="stat-label">M.Tech GPA</div></div>
+            </div>
+        </div>
+    </section>
 
-        <section>
-          <h2>Education</h2>
-          <ul>
-            <li>
-              <strong>M.Tech, Electronic Systems Engineering</strong><br />
-              Indian Institute of Science, Bangalore<br>
-              2024–2026
-            </li>
-            <li>
-              <strong>B.Tech, Electronics and Communication</strong><br />
-              Jamia Millia Islamia, New Delhi<br>
-              2020–2024
-            </li>
-          </ul>
-        </section>
-      </div>
-    </main>
-  </div>
+    <section id="skills">
+        <div class="section-header">
+            <div class="section-label">02 // Skills</div>
+            <h2 class="section-title">Technical Expertise</h2>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <div class="skill-icon">⚡</div>
+                <h3>Hardware Design</h3>
+                <ul class="skill-list">
+                    <li>Verilog / SystemVerilog</li>
+                    <li>FPGA Development (Basys3 Artix-7)</li>
+                    <li>Processor Architecture</li>
+                    <li>Cache Design</li>
+                    <li>Pipelining & Optimization</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <div class="skill-icon">🔧</div>
+                <h3>Tools & Platforms</h3>
+                <ul class="skill-list">
+                    <li>Xilinx Vivado</li>
+                    <li>Cadence Virtuoso</li>
+                    <li>Code Composer Studio</li>
+                    <li>Keil µVision</li>
+                    <li>Altium / KiCad</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <div class="skill-icon">💻</div>
+                <h3>Programming</h3>
+                <ul class="skill-list">
+                    <li>C / Embedded C</li>
+                    <li>Python</li>
+                    <li>MATLAB</li>
+                    <li>Assembly (ARM)</li>
+                    <li>SPI / I2C Protocols</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="section-header">
+            <div class="section-label">03 // Projects</div>
+            <h2 class="section-title">Featured Work</h2>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-content">
+                    <span class="project-status status-ongoing">Ongoing — MTech Major Project</span>
+                    <h3>Quantum Key Distribution (QKD) Receiver System</h3>
+                    <p>Designing a secure optical receiver system based on the Coherent One-Way (COW) protocol. Interfacing TDC7200IC with Basys3 FPGA for high-precision time-of-flight measurements with 55ps resolution.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Verilog</span><span class="tech-tag">FPGA</span><span class="tech-tag">SPI Protocol</span><span class="tech-tag">FSM Design</span>
+                    </div>
+                </div>
+                <div class="project-links"></div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-content">
+                    <span class="project-status status-completed">Completed</span>
+                    <h3>5-Stage Pipelined RISC-V Processor</h3>
+                    <p>Implemented a complete 5-stage pipelined RISC-V processor with hazard detection and forwarding. Features IF, ID, EX, MEM, and WB stages with full pipeline control logic.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Verilog</span><span class="tech-tag">RISC-V ISA</span><span class="tech-tag">Pipelining</span><span class="tech-tag">Hazard Handling</span>
+                    </div>
+                </div>
+                <div class="project-links"></div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-content">
+                    <span class="project-status status-completed">Completed</span>
+                    <h3>16-bit Multicycle CISC Processor</h3>
+                    <p>Designed and implemented a 16-bit multicycle CISC processor on Basys3 FPGA. Achieved 138 MHz maximum operating frequency with efficient resource utilization.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Verilog</span><span class="tech-tag">FPGA</span><span class="tech-tag">CISC Architecture</span><span class="tech-tag">FSM Controller</span>
+                    </div>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/farrukhzaf/16bit-cisc-processor-fpga" target="_blank" class="project-link" title="View on GitHub">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-content">
+                    <span class="project-status status-completed">Completed</span>
+                    <h3>Asynchronous FIFO</h3>
+                    <p>Parameterized asynchronous FIFO with Gray code pointer synchronization for reliable cross-clock-domain data transfer. Features programmable thresholds.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Verilog</span><span class="tech-tag">CDC</span><span class="tech-tag">Gray Code</span><span class="tech-tag">FIFO Design</span>
+                    </div>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/farrukhzaf/async-fifo-verilog" target="_blank" class="project-link" title="View on GitHub">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-content">
+                    <span class="project-status status-completed">Completed</span>
+                    <h3>Cache Controller</h3>
+                    <p>Direct-mapped write-through cache controller in Verilog for processor integration with efficient cache line management.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Verilog</span><span class="tech-tag">Cache Design</span><span class="tech-tag">Memory Systems</span>
+                    </div>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/farrukhzaf/cache-controller-verilog" target="_blank" class="project-link" title="View on GitHub">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-content">
+                    <span class="project-status status-completed">Completed</span>
+                    <h3>FPGA-Based HDR Image Tone-Mapping</h3>
+                    <p>Hardware-accelerated Gaussian filtering for HDR tone-mapping. Achieved TMQI score of 0.79 with efficient line buffer approach.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Verilog</span><span class="tech-tag">FPGA</span><span class="tech-tag">Image Processing</span><span class="tech-tag">UART</span>
+                    </div>
+                </div>
+                <div class="project-links"></div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-content">
+                    <span class="project-status status-completed">Completed</span>
+                    <h3>16-bit Pipelined Booth Multiplier</h3>
+                    <p>High-performance radix-4 Booth multiplier with 2-stage pipelining and Wallace tree reduction. Achieved 626 MHz at best PVT corner.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Cadence Virtuoso</span><span class="tech-tag">Digital Design</span><span class="tech-tag">Booth Algorithm</span>
+                    </div>
+                </div>
+                <div class="project-links"></div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-content">
+                    <span class="project-status status-completed">Completed</span>
+                    <h3>Embedded Vending Machine System</h3>
+                    <p>Fully functional vending machine using TM4C123G with LCD, PWM motor control, and IR sensors. Achieved 99% dispensing success rate.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">TM4C123G</span><span class="tech-tag">Embedded C</span><span class="tech-tag">I2C</span><span class="tech-tag">PWM</span>
+                    </div>
+                </div>
+                <div class="project-links"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="section-header">
+            <div class="section-label">04 // Education</div>
+            <h2 class="section-title">Academic Journey</h2>
+        </div>
+        <div class="education-timeline">
+            <div class="education-item">
+                <div class="education-date">2024 - 2026</div>
+                <h3>M.Tech in Electronics Systems Engineering</h3>
+                <p class="institution">Indian Institute of Science, Bangalore</p>
+                <p class="gpa">GPA: 8.6</p>
+            </div>
+            <div class="education-item">
+                <div class="education-date">2020 - 2024</div>
+                <h3>B.Tech in Electronics and Communication</h3>
+                <p class="institution">Jamia Millia Islamia, New Delhi</p>
+                <p class="gpa">GPA: 9.8 | Branch Rank: 1</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="achievements">
+        <div class="section-header">
+            <div class="section-label">05 // Achievements</div>
+            <h2 class="section-title">Recognition</h2>
+        </div>
+        <div class="achievements-grid">
+            <div class="achievement-card">
+                <div class="achievement-icon">🏆</div>
+                <div><h3>GATE AIR 196</h3><p>Qualified Graduate Aptitude Test in Engineering with All India Rank 196</p></div>
+            </div>
+            <div class="achievement-card">
+                <div class="achievement-icon">🥇</div>
+                <div><h3>Branch Rank 1</h3><p>Ranked 1st in B.Tech Electronics and Communication Engineering at Jamia Millia Islamia</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="section-header">
+            <div class="section-label">06 // Contact</div>
+            <h2 class="section-title">Let's Connect</h2>
+        </div>
+        <div class="contact-content">
+            <div class="contact-info">
+                <h3>Interested in collaborating?</h3>
+                <p>I'm always open to discussing new opportunities in digital design, VLSI, and computer architecture.</p>
+                <div class="contact-links">
+                    <a href="mailto:farukhzafar@iisc.ac.in" class="contact-link">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        farukhzafar@iisc.ac.in
+                    </a>
+                    <a href="https://linkedin.com/in/farukhzafar" target="_blank" class="contact-link">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        linkedin.com/in/farukhzafar
+                    </a>
+                    <a href="https://github.com/farrukhzaf" target="_blank" class="contact-link">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                        github.com/farrukhzaf
+                    </a>
+                    <a href="tel:+917673045672" class="contact-link">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        +91-7673045672
+                    </a>
+                </div>
+            </div>
+            <div class="contact-visual">
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <div class="terminal-dot red"></div>
+                        <div class="terminal-dot yellow"></div>
+                        <div class="terminal-dot green"></div>
+                    </div>
+                    <div class="terminal-body">
+                        <div class="terminal-line"><span class="terminal-prompt">~$</span><span class="terminal-command"> cat interests.txt</span></div>
+                        <div class="terminal-line"><span class="terminal-output">→ Computer Architecture</span></div>
+                        <div class="terminal-line"><span class="terminal-output">→ Digital Design & VLSI</span></div>
+                        <div class="terminal-line"><span class="terminal-output">→ FPGA Development</span></div>
+                        <div class="terminal-line"><span class="terminal-output">→ Processor Design</span></div>
+                        <div class="terminal-line"><span class="terminal-output">→ Hardware Acceleration</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Designed & Built by <span class="accent">Mohammad Farukh Zafar</span> © 2025</p>
+    </footer>
 </body>
 </html>
