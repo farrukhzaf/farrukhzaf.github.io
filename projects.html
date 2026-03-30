@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Mohammad Farukh Zafar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="circuit-bg"></div>
+
+    <nav>
+        <a href="index.html" class="logo">mfz<span>.</span></a>
+        <ul class="nav-links">
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="projects.html" class="active">Projects</a></li>
+            <li><a href="education.html">Education</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="page-section">
+        <div class="section-header">
+            <div class="section-label">Projects</div>
+            <h2 class="section-title">Featured Work</h2>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-content">
+                    <span class="project-status status-ongoing">Ongoing — MTech Major Project</span>
+                    <h3>Quantum Key Distribution (QKD) Receiver System</h3>
+                    <p>Designing a secure optical receiver system based on the Coherent One-Way (COW) protocol. Interfacing TDC7200IC with Basys3 FPGA for high-precision time-of-flight measurements with 55ps resolution. Implementing SPI communication and FSM for accurate time interval measurements.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Verilog</span>
+                        <span class="tech-tag">FPGA</span>
+                        <span class="tech-tag">SPI Protocol</span>
+                        <span class="tech-tag">FSM Design</span>
+                    </div>
+                </div>
+                <div class="project-links"></div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-content">
+                    <span class="project-status status-completed">Completed</span>
+                    <h3>5-Stage Pipelined RISC-V Processor</h3>
+                    <p>Implemented a complete 5-stage pipelined RISC-V processor with hazard detection and forwarding. Features IF, ID, EX, MEM, and WB stages with full pipeline control logic for efficient instruction execution and throughput optimization.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Verilog</span>
+                        <span class="tech-tag">RISC-V ISA</span>
+                        <span class="tech-tag">Pipelining</span>
+                        <span class="tech-tag">Hazard Handling</span>
+                    </div>
+                </div>
+                <div class="project-links"></div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-content">
+                    <span class="project-status status-completed">Completed</span>
+                    <h3>16-bit Multicycle CISC Processor</h3>
+                    <p>Designed and implemented a 16-bit multicycle CISC processor on Basys3 FPGA. Features comprehensive instruction set including arithmetic, memory access, shift/rotate, and branching. Achieved 138 MHz maximum operating frequency with efficient resource utilization.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Verilog</span>
+                        <span class="tech-tag">FPGA</span>
+                        <span class="tech-tag">CISC Architecture</span>
+                        <span class="tech-tag">FSM Controller</span>
+                    </div>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/farrukhzaf/16bit-cisc-processor-fpga" target="_blank" class="project-link" title="View on GitHub">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-content">
+                    <span class="project-status status-completed">Completed</span>
+                    <h3>Asynchronous FIFO</h3>
+                    <p>Parameterized asynchronous FIFO implementation with Gray code pointer synchronization for reliable cross-clock-domain data transfer. Features programmable almost-full and almost-empty thresholds for flow control optimization.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Verilog</span>
+                        <span class="tech-tag">CDC</span>
+                        <span class="tech-tag">Gray Code</span>
+                        <span class="tech-tag">FIFO Design</span>
+                    </div>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/farrukhzaf/async-fifo-verilog" target="_blank" class="project-link" title="View on GitHub">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-content">
+                    <span class="project-status status-completed">Completed</span>
+                    <h3>Cache Controller</h3>
+                    <p>Direct-mapped write-through cache controller implementation in Verilog. Designed for integration with processor systems, featuring efficient cache line management and memory access optimization.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Verilog</span>
+                        <span class="tech-tag">Cache Design</span>
+                        <span class="tech-tag">Memory Systems</span>
+                    </div>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/farrukhzaf/cache-controller-verilog" target="_blank" class="project-link" title="View on GitHub">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-content">
+                    <span class="project-status status-completed">Completed</span>
+                    <h3>FPGA-Based HDR Image Tone-Mapping</h3>
+                    <p>Hardware-accelerated Gaussian filtering for HDR image tone-mapping on FPGA. Developed efficient line buffer approach for high-resolution images and UART interface for host integration. Achieved TMQI score of 0.79.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Verilog</span>
+                        <span class="tech-tag">FPGA</span>
+                        <span class="tech-tag">Image Processing</span>
+                        <span class="tech-tag">UART</span>
+                    </div>
+                </div>
+                <div class="project-links"></div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-content">
+                    <span class="project-status status-completed">Completed</span>
+                    <h3>16-bit Pipelined Booth Multiplier</h3>
+                    <p>High-performance 16-bit signed pipelined radix-4 Booth multiplier with 2-stage pipelining, Wallace tree reduction, and carry-skip adders. Achieved maximum clock frequency of 626 MHz at best PVT corner.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Cadence Virtuoso</span>
+                        <span class="tech-tag">Digital Design</span>
+                        <span class="tech-tag">Booth Algorithm</span>
+                    </div>
+                </div>
+                <div class="project-links"></div>
+            </div>
+
+            <!-- <div class="project-card">
+                <div class="project-content">
+                    <span class="project-status status-completed">Completed</span>
+                    <h3>Embedded Vending Machine System</h3>
+                    <p>Fully functional vending machine prototype using TM4C123G microcontroller with LCD interface, PWM motor control, and IR sensor-based detection. Implemented non-blocking state machine with timer interrupts achieving 99% dispensing success rate.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">TM4C123G</span>
+                        <span class="tech-tag">Embedded C</span>
+                        <span class="tech-tag">I2C</span>
+                        <span class="tech-tag">PWM</span>
+                    </div>
+                </div>
+                <div class="project-links"></div>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- <footer>
+        <p>Designed & Built by <span class="accent">Mohammad Farukh Zafar</span> © 2025</p>
+    </footer> -->
+</body>
+</html>
