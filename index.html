@@ -3,52 +3,224 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohammad Farukh Zafar | Hardware Engineer</title>
+    <title>Mohammad Farukh Zafar</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="circuit-bg"></div>
 
     <nav>
-        <a href="index.html" class="logo">mfz<span>.</span></a>
-        <ul class="nav-links">
-            <li><a href="about.html">About Me</a></li>
-            <li><a href="skills.html">Skills</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="education.html">Education</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
+        <a href="#" class="logo">mfz<span>.</span></a>
+        <div class="nav-right">
+            <a href="mailto:farukhzafar@iisc.ac.in" class="nav-email">farukhzafar@iisc.ac.in</a>
+        </div>
     </nav>
 
-    <section class="hero">
-        <div class="hero-content">
-            <div class="hero-label">Hardware Engineer</div>
-            <h1>Mohammad Farukh <span class="highlight">Zafar</span></h1>
-            <p class="hero-description">
-                Student, learner, and hardware enthusiast passionate about computer architecture, digital design, and building efficient systems
-            
-            </p>
-            <div class="hero-buttons">
-                <a href="projects.html" class="btn btn-primary">View Projects</a>
-                <a href="contact.html" class="btn btn-secondary">Get in Touch</a>
-            </div>
-        </div>
-        <div class="hero-visual">
-            <div class="signal-wave">
-                <svg viewBox="0 0 400 400">
-                    <path class="wave-path" d="M50,200 Q100,100 150,200 T250,200 T350,200" />
-                    <path class="wave-path wave-path-2" d="M50,180 Q100,80 150,180 T250,180 T350,180" />
-                    <path class="wave-path wave-path-3" d="M50,220 Q100,120 150,220 T250,220 T350,220" />
-                </svg>
-            </div>
-        </div>
-    </section>
+    <main class="bento">
 
-    <!-- <footer>
-        <p>Designed & Built by <span class="accent">Mohammad Farukh Zafar</span> © 2025</p>
-    </footer> -->
+        <!-- Row 1: Hero + Photo -->
+        <div class="card card-hero">
+            <div class="card-label">Hardware Engineer</div>
+            <h1>Mohammad Farukh <span class="highlight">Zafar</span></h1>
+            <p>Student, learner, and hardware enthusiast passionate about computer architecture, digital design, and building efficient systems.</p>
+        </div>
+
+        <div class="card card-photo">
+            <img src="profile.jpg" alt="Farukh Zafar">
+        </div>
+
+        <!-- Row 2: About + Currently + Education -->
+        <div class="card card-about">
+            <div class="card-label">About</div>
+            <p>I've always wanted to know what actually happens after you hit "run" &#8212; how code turns into something real on hardware. That curiosity is basically why I'm here. Did my schooling and B.Tech in Delhi, then moved to Bangalore for Masters because electronics just made sense to me.</p>
+        </div>
+
+        <div class="card card-currently">
+            <div class="card-label">Currently</div>
+            <div class="currently-list">
+                <div class="currently-row">
+                    <span class="currently-key">Semester</span>
+                    <span class="currently-val">Final</span>
+                </div>
+                <div class="currently-row">
+                    <span class="currently-key">Working on</span>
+                    <span class="currently-val">QKD Receiver</span>
+                </div>
+                <div class="currently-row">
+                    <span class="currently-key">Location</span>
+                    <span class="currently-val">Bangalore</span>
+                </div>
+                <div class="currently-row">
+                    <span class="currently-key">Mood</span>
+                    <span class="currently-val">Making it count</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="card card-education">
+            <div class="card-label">Education</div>
+            <div class="edu-entry">
+                <span class="edu-degree">M.Tech, Electronics Systems</span>
+                <span class="edu-school">IISc Bangalore</span>
+                <span class="edu-year">2024 &#8211; 2026</span>
+            </div>
+            <div class="edu-entry">
+                <span class="edu-degree">B.Tech, ECE</span>
+                <span class="edu-school">Jamia Millia Islamia, Delhi</span>
+                <span class="edu-year">2020 &#8211; 2024</span>
+            </div>
+        </div>
+
+        <!-- Row 3: Skills (wide) + Life -->
+        <div class="card card-skills">
+            <div class="card-label">Skills</div>
+            <div class="skill-tags">
+                <span class="tag tag-hw">Verilog</span>
+                <span class="tag tag-hw">SystemVerilog</span>
+                <span class="tag tag-hw">FPGA</span>
+                <span class="tag tag-hw">Processor Architecture</span>
+                <span class="tag tag-hw">Cache Design</span>
+                <span class="tag tag-tool">Xilinx Vivado</span>
+                <span class="tag tag-tool">Cadence Virtuoso</span>
+                <span class="tag tag-tool">Altium / KiCad</span>
+                <span class="tag tag-code">C / Embedded C</span>
+                <span class="tag tag-code">Python</span>
+                <span class="tag tag-code">MATLAB</span>
+                <span class="tag tag-code">ARM Assembly</span>
+                <span class="tag">SPI / I2C / UART</span>
+            </div>
+        </div>
+
+        <div class="card card-life">
+            <div class="card-label">Beyond the Lab</div>
+            <p>I play football when I get the chance and travel when I can. Nothing fancy, just the usual ways to not think about timing violations for a while.</p>
+            <p class="life-chapter">The goal is simple &#8212; live a life I won't look back on with regret.</p>
+        </div>
+
+        <!-- Projects Header -->
+        <div class="card card-projects-header">
+            <div class="card-label">Projects</div>
+            <h2>Featured Work</h2>
+        </div>
+
+        <!-- Featured Project -->
+        <div class="card card-project card-project-lg">
+            <div class="project-top">
+                <span class="badge badge-ongoing">Ongoing &#183; MTech Major</span>
+            </div>
+            <h3>Quantum Key Distribution Receiver System</h3>
+            <p>Designing a secure optical receiver based on the COW protocol. Interfacing TDC7200IC with Basys3 FPGA for high-precision time-of-flight measurements with 55ps resolution.</p>
+            <div class="project-tags">
+                <span>Verilog</span><span>FPGA</span><span>SPI</span><span>FSM</span>
+            </div>
+        </div>
+
+        <!-- Project Grid -->
+        <div class="card card-project">
+            <div class="project-top">
+                <span class="badge badge-done">Completed</span>
+            </div>
+            <h3>5-Stage Pipelined RISC-V Processor</h3>
+            <p>Complete pipelined RISC-V processor with hazard detection and forwarding across all five stages.</p>
+            <div class="project-tags">
+                <span>Verilog</span><span>RISC-V</span><span>Pipelining</span>
+            </div>
+        </div>
+
+        <div class="card card-project">
+            <div class="project-top">
+                <span class="badge badge-done">Completed</span>
+                <a href="https://github.com/farrukhzaf/16bit-cisc-processor-fpga" target="_blank" class="gh-link" title="GitHub">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </a>
+            </div>
+            <h3>16-bit Multicycle CISC Processor</h3>
+            <p>CISC processor on Basys3 FPGA. 138 MHz max frequency with full instruction set.</p>
+            <div class="project-tags">
+                <span>Verilog</span><span>FPGA</span><span>CISC</span>
+            </div>
+        </div>
+
+        <div class="card card-project">
+            <div class="project-top">
+                <span class="badge badge-done">Completed</span>
+                <a href="https://github.com/farrukhzaf/async-fifo-verilog" target="_blank" class="gh-link" title="GitHub">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </a>
+            </div>
+            <h3>Asynchronous FIFO</h3>
+            <p>Gray code pointer synchronization for reliable cross-clock-domain data transfer.</p>
+            <div class="project-tags">
+                <span>Verilog</span><span>CDC</span><span>Gray Code</span>
+            </div>
+        </div>
+
+        <div class="card card-project">
+            <div class="project-top">
+                <span class="badge badge-done">Completed</span>
+                <a href="https://github.com/farrukhzaf/cache-controller-verilog" target="_blank" class="gh-link" title="GitHub">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </a>
+            </div>
+            <h3>Cache Controller</h3>
+            <p>Direct-mapped write-through cache controller with efficient line management.</p>
+            <div class="project-tags">
+                <span>Verilog</span><span>Cache</span><span>Memory Systems</span>
+            </div>
+        </div>
+
+        <div class="card card-project">
+            <div class="project-top">
+                <span class="badge badge-done">Completed</span>
+            </div>
+            <h3>FPGA HDR Tone-Mapping</h3>
+            <p>Hardware-accelerated Gaussian filtering with line buffer approach and UART interface. TMQI 0.79.</p>
+            <div class="project-tags">
+                <span>Verilog</span><span>FPGA</span><span>Image Processing</span>
+            </div>
+        </div>
+
+        <div class="card card-project">
+            <div class="project-top">
+                <span class="badge badge-done">Completed</span>
+            </div>
+            <h3>16-bit Pipelined Booth Multiplier</h3>
+            <p>Radix-4 Booth multiplier with Wallace tree reduction and carry-skip adders. 626 MHz at best PVT corner.</p>
+            <div class="project-tags">
+                <span>Cadence Virtuoso</span><span>Booth Algorithm</span>
+            </div>
+        </div>
+
+        <!-- Contact Card -->
+        <div class="card card-contact">
+            <div class="card-label">Let's Connect</div>
+            <div class="contact-grid">
+                <a href="mailto:farukhzafar@iisc.ac.in" class="contact-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    <span>Email</span>
+                </a>
+                <a href="https://linkedin.com/in/farukhzafar" target="_blank" class="contact-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://github.com/farrukhzaf" target="_blank" class="contact-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                    <span>GitHub</span>
+                </a>
+                <a href="tel:+917673045672" class="contact-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    <span>Phone</span>
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>Designed & Built by <span class="accent">Mohammad Farukh Zafar</span></p>
+    </footer>
+
 </body>
 </html>
