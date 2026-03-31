@@ -434,6 +434,49 @@
                         }
                     });
                 
+                    // Function to animate data moving across the screen
+                    function createFlyingPacket(startId, endId, text, color) {
+                        const startEl = document.getElementById(startId);
+                        const endEl = document.getElementById(endId);
+                        if (!startEl || !endEl) return;
+                
+                        const startRect = startEl.getBoundingClientRect();
+                        const endRect = endEl.getBoundingClientRect();
+                
+                        const packet = document.createElement('div');
+                        packet.innerText = text;
+                        packet.style.position = 'fixed';
+                        packet.style.left = (startRect.left + startRect.width / 2) + 'px';
+                        packet.style.top = (startRect.top + startRect.height / 2) + 'px';
+                        packet.style.transform = 'translate(-50%, -50%)';
+                        packet.style.background = color;
+                        packet.style.color = '#111'; // Dark text for contrast
+                        packet.style.padding = '4px 10px';
+                        packet.style.borderRadius = '6px';
+                        packet.style.fontFamily = "'JetBrains Mono', monospace";
+                        packet.style.fontWeight = '700';
+                        packet.style.fontSize = '0.9rem';
+                        packet.style.zIndex = '9999';
+                        packet.style.pointerEvents = 'none';
+                        packet.style.transition = 'all 0.6s cubic-bezier(0.25, 1, 0.5, 1)'; // Smooth easing
+                        packet.style.boxShadow = `0 0 15px ${color}`;
+                
+                        document.body.appendChild(packet);
+                
+                        // Force browser reflow to ensure the starting position is registered
+                        packet.getBoundingClientRect();
+                
+                        // Move to destination
+                        packet.style.left = (endRect.left + endRect.width / 2) + 'px';
+                        packet.style.top = (endRect.top + endRect.height / 2) + 'px';
+                        packet.style.opacity = '0'; // Fade out as it arrives
+                
+                        // Cleanup after animation finishes
+                        setTimeout(() => {
+                            packet.remove();
+                        }, 600);
+                    }
+                
                     btn.addEventListener('click', () => {
                         const isWrite = simOp.value === "1";
                         const addr = parseInt(simAddr.value) || 0;
@@ -441,30 +484,75 @@
                         if (!/^[0-9A-F]{1,2}$/.test(dataHex)) dataHex = "00";
                         const dataVal = parseInt(dataHex, 16);
                         
-                        // Update Frame Visuals
+                        // Temporarily disable button to prevent spamming
+                        btn.disabled = true;
+                        btn.style.opacity = "0.6";
+                        btn.innerText = "Transmitting...";
+                
+                        // Update Frame Visuals instantly
                         frame.style.opacity = "1";
                         document.getElementById('frame-rw').innerHTML = `<span class="bit-label">Bit 15 (R/W)</span>${isWrite ? '1' : '0'}`;
                         document.getElementById('frame-addr').innerHTML = `<span class="bit-label">Bits [14:8] (Addr)</span>${addr.toString(2).padStart(7, '0')}`;
                         document.getElementById('frame-data').innerHTML = `<span class="bit-label">Bits [7:0] (Data)</span>${isWrite ? dataVal.toString(2).padStart(8, '0') : 'XXXXXXXX'}`;
                 
-                        // Logic processing
+                        const formattedAddr = `0x${addr.toString(16).padStart(2, '0').toUpperCase()}`;
+                        const formattedData = `0x${dataVal.toString(16).padStart(2, '0').toUpperCase()}`;
+                
+                        // Logic processing with animation delays
                         if (addr >= 0 && addr <= 4) {
+                            const targetRegId = `reg-${addr}`;
+                
                             if (isWrite) {
-                                registers[addr] = dataVal;
-                                const regEl = document.getElementById(`reg-${addr}`);
-                                regEl.innerText = `0x${dataVal.toString(16).padStart(2, '0').toUpperCase()}`;
-                                regEl.style.color = "var(--accent-primary)";
-                                setTimeout(() => regEl.style.color = "var(--text-primary)", 500);
-                                msg.innerText = `> MOSI: Wrote 0x${dataVal.toString(16).padStart(2, '0').toUpperCase()} to Address 0x${addr.toString(16).padStart(2, '0').toUpperCase()}`;
-                                msg.style.color = "var(--accent-primary)";
+                                msg.innerText = `> MOSI: Shifting ${formattedData} to Address ${formattedAddr}...`;
+                                msg.style.color = "var(--text-muted)";
+                                
+                                // Launch animation from the Data frame bit down to the specific register
+                                createFlyingPacket('frame-data', targetRegId, formattedData, 'rgba(0, 212, 170, 1)'); // Green/Primary
+                
+                                // Wait for animation to finish before updating DOM
+                                setTimeout(() => {
+                                    registers[addr] = dataVal;
+                                    const regEl = document.getElementById(targetRegId);
+                                    regEl.innerText = formattedData;
+                                    
+                                    // Flash the register text
+                                    regEl.style.color = "var(--accent-primary)";
+                                    setTimeout(() => regEl.style.color = "var(--text-primary)", 600);
+                                    
+                                    msg.innerText = `> MOSI: Wrote ${formattedData} to Address ${formattedAddr}`;
+                                    msg.style.color = "var(--accent-primary)";
+                                    
+                                    btn.disabled = false;
+                                    btn.style.opacity = "1";
+                                    btn.innerText = "Send 16-bit Frame";
+                                }, 600);
+                
                             } else {
-                                const readVal = registers[addr].toString(16).padStart(2, '0').toUpperCase();
-                                msg.innerText = `> MISO: Read 0x${readVal} from Address 0x${addr.toString(16).padStart(2, '0').toUpperCase()}`;
-                                msg.style.color = "var(--accent-secondary)";
+                                const readValHex = `0x${registers[addr].toString(16).padStart(2, '0').toUpperCase()}`;
+                                msg.innerText = `> MISO: Reading from Address ${formattedAddr}...`;
+                                msg.style.color = "var(--text-muted)";
+                
+                                // Launch animation UP from the register to the message console
+                                createFlyingPacket(targetRegId, 'sim-msg', readValHex, 'rgba(124, 58, 237, 1)'); // Purple/Secondary
+                
+                                // Wait for animation to finish
+                                setTimeout(() => {
+                                    msg.innerText = `> MISO: Read ${readValHex} from Address ${formattedAddr}`;
+                                    msg.style.color = "var(--accent-secondary)";
+                                    
+                                    btn.disabled = false;
+                                    btn.style.opacity = "1";
+                                    btn.innerText = "Send 16-bit Frame";
+                                }, 600);
                             }
                         } else {
-                            msg.innerText = `> Transaction Ignored: Address 0x${addr.toString(16).padStart(2, '0').toUpperCase()} is Out of Range (Read returns 0xFF)`;
-                            msg.style.color = "#ef4444"; // Red for error
+                            // Out of range (Instant failure, no animation)
+                            msg.innerText = `> Transaction Ignored: Address ${formattedAddr} is Out of Range`;
+                            msg.style.color = "#ef4444"; 
+                            
+                            btn.disabled = false;
+                            btn.style.opacity = "1";
+                            btn.innerText = "Send 16-bit Frame";
                         }
                     });
                 </script>
