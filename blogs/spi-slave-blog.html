@@ -356,6 +356,119 @@
 
                 <p><strong>R/W = 1</strong> means write — the master sends data on MOSI during clocks 9–16, written to the addressed register. <strong>R/W = 0</strong> means read — the slave drives the register contents on MISO during clocks 9–16. Both complete in a single 16-bit transaction.</p>
 
+                <div class="spi-simulator" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 10px; padding: 1.5rem; margin: 2rem 0;">
+                    <h3 style="margin-top: 0; font-size: 1.2rem; color: var(--accent-primary);">Interactive SPI Frame Simulator</h3>
+                    <p style="font-size: 0.9rem; margin-bottom: 1.5rem;">Test the frame logic. The master holds CS low, shifts 16 bits, and updates the ASIC registers below.</p>
+                    
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem; align-items: flex-end;">
+                        <div>
+                            <label style="display: block; font-size: 0.8rem; font-family: 'JetBrains Mono', monospace; color: var(--text-muted); margin-bottom: 0.3rem;">Operation</label>
+                            <select id="sim-op" style="background: rgba(0,0,0,0.2); color: var(--text-primary); border: 1px solid var(--border-color); padding: 0.5rem; border-radius: 5px; font-family: inherit;">
+                                <option value="1">Write (1)</option>
+                                <option value="0">Read (0)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label style="display: block; font-size: 0.8rem; font-family: 'JetBrains Mono', monospace; color: var(--text-muted); margin-bottom: 0.3rem;">Address (0-127)</label>
+                            <input type="number" id="sim-addr" min="0" max="127" value="0" style="background: rgba(0,0,0,0.2); color: var(--text-primary); border: 1px solid var(--border-color); padding: 0.5rem; border-radius: 5px; width: 80px; font-family: inherit;">
+                        </div>
+                        <div id="data-input-container">
+                            <label style="display: block; font-size: 0.8rem; font-family: 'JetBrains Mono', monospace; color: var(--text-muted); margin-bottom: 0.3rem;">Data (Hex 00-FF)</label>
+                            <input type="text" id="sim-data" maxlength="2" value="A5" style="background: rgba(0,0,0,0.2); color: var(--text-primary); border: 1px solid var(--border-color); padding: 0.5rem; border-radius: 5px; width: 80px; font-family: inherit;">
+                        </div>
+                        <button id="sim-btn" style="background: rgba(0, 212, 170, 0.1); color: var(--accent-primary); border: 1px solid var(--accent-primary); padding: 0.5rem 1rem; border-radius: 5px; cursor: pointer; font-family: inherit; font-weight: 600; transition: all 0.2s;">Send 16-bit Frame</button>
+                    </div>
+                
+                    <div class="frame-visual" id="sim-frame" style="margin-bottom: 1.5rem; opacity: 0.5;">
+                        <div class="frame-bit rw" id="frame-rw"><span class="bit-label">Bit 15 (R/W)</span>-</div>
+                        <div class="frame-bit addr" id="frame-addr"><span class="bit-label">Bits [14:8] (Addr)</span>-------</div>
+                        <div class="frame-bit data" id="frame-data"><span class="bit-label">Bits [7:0] (Data)</span>--------</div>
+                    </div>
+                
+                    <div id="sim-msg" style="font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; color: var(--accent-tertiary); margin-bottom: 1.5rem; min-height: 1.2rem;"></div>
+                
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 0.5rem;">
+                        <div style="background: rgba(0,0,0,0.2); border: 1px solid var(--border-color); padding: 0.8rem; text-align: center; border-radius: 5px;">
+                            <div style="font-size: 0.7rem; color: var(--text-muted); font-family: 'JetBrains Mono', monospace;">0x00</div>
+                            <div id="reg-0" style="font-family: 'JetBrains Mono', monospace; font-weight: 600; color: var(--text-primary);">0x00</div>
+                        </div>
+                        <div style="background: rgba(0,0,0,0.2); border: 1px solid var(--border-color); padding: 0.8rem; text-align: center; border-radius: 5px;">
+                            <div style="font-size: 0.7rem; color: var(--text-muted); font-family: 'JetBrains Mono', monospace;">0x01</div>
+                            <div id="reg-1" style="font-family: 'JetBrains Mono', monospace; font-weight: 600; color: var(--text-primary);">0x00</div>
+                        </div>
+                        <div style="background: rgba(0,0,0,0.2); border: 1px solid var(--border-color); padding: 0.8rem; text-align: center; border-radius: 5px;">
+                            <div style="font-size: 0.7rem; color: var(--text-muted); font-family: 'JetBrains Mono', monospace;">0x02</div>
+                            <div id="reg-2" style="font-family: 'JetBrains Mono', monospace; font-weight: 600; color: var(--text-primary);">0x00</div>
+                        </div>
+                        <div style="background: rgba(0,0,0,0.2); border: 1px solid var(--border-color); padding: 0.8rem; text-align: center; border-radius: 5px;">
+                            <div style="font-size: 0.7rem; color: var(--text-muted); font-family: 'JetBrains Mono', monospace;">0x03</div>
+                            <div id="reg-3" style="font-family: 'JetBrains Mono', monospace; font-weight: 600; color: var(--text-primary);">0x00</div>
+                        </div>
+                        <div style="background: rgba(0,0,0,0.2); border: 1px solid var(--border-color); padding: 0.8rem; text-align: center; border-radius: 5px;">
+                            <div style="font-size: 0.7rem; color: var(--text-muted); font-family: 'JetBrains Mono', monospace;">0x04</div>
+                            <div id="reg-4" style="font-family: 'JetBrains Mono', monospace; font-weight: 600; color: var(--text-primary);">0x00</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <script>
+                    const simOp = document.getElementById('sim-op');
+                    const simAddr = document.getElementById('sim-addr');
+                    const simData = document.getElementById('sim-data');
+                    const dataContainer = document.getElementById('data-input-container');
+                    const btn = document.getElementById('sim-btn');
+                    const msg = document.getElementById('sim-msg');
+                    const frame = document.getElementById('sim-frame');
+                    
+                    // Register Bank State
+                    let registers = [0, 0, 0, 0, 0];
+                
+                    // Toggle Data input visibility based on Read/Write
+                    simOp.addEventListener('change', (e) => {
+                        if(e.target.value === "0") {
+                            dataContainer.style.opacity = "0.3";
+                            simData.disabled = true;
+                        } else {
+                            dataContainer.style.opacity = "1";
+                            simData.disabled = false;
+                        }
+                    });
+                
+                    btn.addEventListener('click', () => {
+                        const isWrite = simOp.value === "1";
+                        const addr = parseInt(simAddr.value) || 0;
+                        let dataHex = simData.value.toUpperCase();
+                        if (!/^[0-9A-F]{1,2}$/.test(dataHex)) dataHex = "00";
+                        const dataVal = parseInt(dataHex, 16);
+                        
+                        // Update Frame Visuals
+                        frame.style.opacity = "1";
+                        document.getElementById('frame-rw').innerHTML = `<span class="bit-label">Bit 15 (R/W)</span>${isWrite ? '1' : '0'}`;
+                        document.getElementById('frame-addr').innerHTML = `<span class="bit-label">Bits [14:8] (Addr)</span>${addr.toString(2).padStart(7, '0')}`;
+                        document.getElementById('frame-data').innerHTML = `<span class="bit-label">Bits [7:0] (Data)</span>${isWrite ? dataVal.toString(2).padStart(8, '0') : 'XXXXXXXX'}`;
+                
+                        // Logic processing
+                        if (addr >= 0 && addr <= 4) {
+                            if (isWrite) {
+                                registers[addr] = dataVal;
+                                const regEl = document.getElementById(`reg-${addr}`);
+                                regEl.innerText = `0x${dataVal.toString(16).padStart(2, '0').toUpperCase()}`;
+                                regEl.style.color = "var(--accent-primary)";
+                                setTimeout(() => regEl.style.color = "var(--text-primary)", 500);
+                                msg.innerText = `> MOSI: Wrote 0x${dataVal.toString(16).padStart(2, '0').toUpperCase()} to Address 0x${addr.toString(16).padStart(2, '0').toUpperCase()}`;
+                                msg.style.color = "var(--accent-primary)";
+                            } else {
+                                const readVal = registers[addr].toString(16).padStart(2, '0').toUpperCase();
+                                msg.innerText = `> MISO: Read 0x${readVal} from Address 0x${addr.toString(16).padStart(2, '0').toUpperCase()}`;
+                                msg.style.color = "var(--accent-secondary)";
+                            }
+                        } else {
+                            msg.innerText = `> Transaction Ignored: Address 0x${addr.toString(16).padStart(2, '0').toUpperCase()} is Out of Range (Read returns 0xFF)`;
+                            msg.style.color = "#ef4444"; // Red for error
+                        }
+                    });
+                </script>
+                
                 <table class="blog-table">
                     <thead>
                         <tr>
