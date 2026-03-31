@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Mohammad Farukh Zafar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="circuit-bg"></div>
+
+    <nav>
+        <a href="index.html" class="logo">mfz<span>.</span></a>
+        <ul class="nav-links">
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="education.html">Education</a></li>
+            <li><a href="blog.html" class="active">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </nav>
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="about.html">About Me</a>
+        <a href="skills.html">Skills</a>
+        <a href="projects.html">Projects</a>
+        <a href="education.html">Education</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <section class="page-section">
+        <div class="section-header">
+            <div class="section-label">Blog</div>
+            <h2 class="section-title">Thoughts & Notes</h2>
+        </div>
+        <div class="blog-grid">
+
+            <!-- 
+            ============================================
+            HOW TO ADD A NEW BLOG POST:
+            ============================================
+            Copy the template below, paste it here, and fill in your content.
+            For a full blog post page, create a new HTML file (e.g., blog-post-1.html)
+            and link to it with the href on the <a> tag.
+            
+            <a href="blog-post-1.html" class="blog-card">
+                <div class="blog-meta">
+                    <span class="blog-date">DD Mon YYYY</span>
+                    <span class="blog-tag">Category</span>
+                </div>
+                <h3>Your Blog Post Title</h3>
+                <p>A short 1-2 line summary of what the post is about. Keep it interesting enough to make people click through.</p>
+                <span class="read-more">Read more →</span>
+            </a>
+            ============================================
+            -->
+
+            <div class="blog-empty">
+                <p>Coming soon.</p>
+                <p style="font-size: 0.9rem;">Notes on hardware design, VLSI, processor architecture, and things I learn along the way.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+    const h=document.getElementById('hamburger'),m=document.getElementById('mobileMenu');
+    h.addEventListener('click',()=>{h.classList.toggle('open');m.classList.toggle('open');document.body.style.overflow=m.classList.contains('open')?'hidden':'';});
+    m.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{h.classList.remove('open');m.classList.remove('open');document.body.style.overflow='';}));
+    </script>
+</body>
+</html>
