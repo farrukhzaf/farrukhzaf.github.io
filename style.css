@@ -76,9 +76,8 @@ nav {
 
 .hero h1 {
     display: inline;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: inherit; font-weight: 600; line-height: inherit;
-    letter-spacing: normal; color: var(--accent-primary); margin: 0;
+    font-family: inherit; font-size: inherit; font-weight: inherit;
+    line-height: inherit; letter-spacing: inherit; color: inherit; margin: 0;
 }
 .hero h1 .highlight {
     background: var(--gradient-1); -webkit-background-clip: text;
